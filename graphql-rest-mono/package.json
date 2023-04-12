@@ -1,0 +1,25 @@
+{
+    "name": "graphql-rest-mono",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "type": "module",
+    "scripts": {
+        "start": "nodemon --exec ts-node src/main.ts"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+        "@types/node": "18.15.11",
+        "ts-node": "10.9.1",
+        "typescript": "5.0.4"
+    },
+    "dependencies": {
+        "@apollo/datasource-rest": "^5.0.2",
+        "@apollo/server": "^4.6.0",
+        "graphql": "^16.6.0",
+        "graphql-tag": "^2.12.6",
+        "nodemon": "^2.0.22"
+    }
+}
