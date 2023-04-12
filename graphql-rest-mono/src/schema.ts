@@ -2,7 +2,8 @@ import gql from "graphql-tag";
 
 const typeDefs = gql`
     type Query {
-        post: [Post!]!
+        posts: [Post!]!
+        post(id: ID!): Post
     }
 
     type Post {
@@ -13,6 +14,15 @@ const typeDefs = gql`
         "Post's title"
         title: String!
         "Post's main content"
+        body: String!
+        comment: [Comment!]!
+    }
+
+    type Comment {
+        postId: Int!
+        id: Int!
+        name: String!
+        email: String!
         body: String!
     }
 `;
