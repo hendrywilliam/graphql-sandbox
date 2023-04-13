@@ -4,6 +4,7 @@ const typeDefs = gql`
     type Query {
         posts: [Post!]!
         post(id: ID!): Post
+        users: [User!]!
     }
 
     type Post {
@@ -24,6 +25,36 @@ const typeDefs = gql`
         name: String!
         email: String!
         body: String!
+    }
+
+    type User {
+        id: Int!
+        name: String!
+        username: String!
+        email: String!
+        address: Address!
+        phone: String!
+        website: String!
+        company: Company!
+    }
+
+    type Address {
+        street: String!
+        suite: String!
+        city: String!
+        zipcode: String!
+        geo: Geolocation!
+    }
+
+    type Geolocation {
+        lat: String!
+        lng: String!
+    }
+
+    type Company {
+        name: String!
+        catchPhrase: String!
+        bs: String!
     }
 `;
 

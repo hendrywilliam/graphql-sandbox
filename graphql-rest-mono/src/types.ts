@@ -1,4 +1,5 @@
-import NganuAPI from "./ds/api";
+import NganuPostApi from "./ds/post";
+import NganuUserAPI from "./ds/user";
 
 export interface Movie {
     userId: Number;
@@ -9,7 +10,8 @@ export interface Movie {
 
 export interface ContextValue {
     dataSources: {
-        nganuPost: NganuAPI;
+        nganuPost: NganuPostApi;
+        nganuUser: NganuUserAPI;
     };
 }
 
@@ -19,4 +21,28 @@ export interface Comment {
     name: String;
     email: String;
     body: String;
+}
+
+export interface User {
+    id: Number;
+    name: String;
+    username: String;
+    email: String;
+    address: {
+        street: String;
+        suite: String;
+        city: String;
+        zipcode: String;
+        geo: {
+            lat: String;
+            lng: String;
+        };
+    };
+    phone: String;
+    website: String;
+    company: {
+        name: String;
+        catchPhrase: String;
+        bS: String;
+    };
 }

@@ -6,6 +6,9 @@ const resolvers = {
         post: (_, { id }, { dataSources }) => {
             return dataSources.nganuPost.fetchPost(id);
         },
+        users: (_, __, { dataSources }) => {
+            return dataSources.nganuUser.fetchUserList();
+        },
     },
     Post: {
         comment: ({ id }, __, { dataSources }) => {

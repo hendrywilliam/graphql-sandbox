@@ -1,6 +1,7 @@
 import { ApolloServer } from "@apollo/server";
 import { startStandaloneServer } from "@apollo/server/standalone";
-import NganuAPI from "./ds/api";
+import NganuPostApi from "./ds/post";
+import NganuUserAPI from "./ds/user";
 import typeDefs from "./schema";
 import resolvers from "./resolvers";
 import { ContextValue } from "./types";
@@ -12,7 +13,8 @@ async function startServer() {
         context: async () => {
             return {
                 dataSources: {
-                    nganuPost: new NganuAPI(),
+                    nganuPost: new NganuPostApi(),
+                    nganuUser: new NganuUserAPI(),
                 },
             };
         },
