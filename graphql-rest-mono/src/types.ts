@@ -1,7 +1,7 @@
 import NganuPostApi from "./ds/post";
 import NganuUserAPI from "./ds/user";
 
-export interface Movie {
+export interface Post {
     userId: Number;
     id: Number;
     title: String;

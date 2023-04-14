@@ -3,12 +3,12 @@ import { RESTDataSource } from "@apollo/datasource-rest";
 class NganuPostApi extends RESTDataSource {
     override baseURL = "https://jsonplaceholder.typicode.com/";
 
-    async fetchPosts<Movie>(): Promise<Movie[]> {
-        return this.get<Movie[]>("posts");
+    async fetchPosts<Post>(): Promise<Post[]> {
+        return this.get<Post[]>("posts");
     }
 
-    async fetchPost<Movie>(id: Number): Promise<Movie> {
-        return this.get<Movie>(`posts/${id}`);
+    async fetchPost<Post>(id: Number): Promise<Post> {
+        return this.get<Post>(`posts/${id}`);
     }
 
     async fetchCommentsInPost<Comment>(id: Number): Promise<Comment[]> {

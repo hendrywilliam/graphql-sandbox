@@ -5,6 +5,9 @@ const typeDefs = gql`
         posts: [Post!]!
         post(id: ID!): Post
         users: [User!]!
+        user(id: ID!): User
+        albums: [Album!]!
+        album(id: ID!): Album
     }
 
     type Post {
@@ -23,7 +26,7 @@ const typeDefs = gql`
         postId: Int!
         id: Int!
         name: String!
-        email: String!
+        email: String
         body: String!
     }
 
@@ -36,6 +39,7 @@ const typeDefs = gql`
         phone: String!
         website: String!
         company: Company!
+        posts: [Post!]
     }
 
     type Address {
@@ -55,6 +59,21 @@ const typeDefs = gql`
         name: String!
         catchPhrase: String!
         bs: String!
+    }
+
+    type Album {
+        userId: Int
+        id: Int
+        title: String!
+        photos: [Photo!]
+    }
+
+    type Photo {
+        albumId: Int!
+        id: Int!
+        title: String!
+        url: String!
+        thumbnailUrl: String!
     }
 `;
 
