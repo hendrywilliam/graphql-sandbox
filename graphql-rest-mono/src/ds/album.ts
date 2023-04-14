@@ -3,16 +3,16 @@ import { RESTDataSource } from "@apollo/datasource-rest";
 class NganuAlbumApi extends RESTDataSource {
     override baseURL = "https://jsonplaceholder.typicode.com/";
 
-    fetchAlbums() {
-        return this.get(`albums`);
+    fetchAlbums<Album>(): Promise<Album[]> {
+        return this.get<Album[]>(`albums`);
     }
 
-    fetchAlbum(id) {
-        return this.get(`albums/${id}`);
+    fetchAlbum<Album>(id): Promise<Album> {
+        return this.get<Album>(`albums/${id}`);
     }
 
-    fetchPhotosInAlbum(id) {
-        return this.get(`albums/${id}/photos`);
+    fetchPhotosInAlbum<Photo>(id): Promise<Photo> {
+        return this.get<Photo>(`albums/${id}/photos`);
     }
 }
 

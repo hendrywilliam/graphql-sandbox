@@ -46,3 +46,17 @@ export interface User {
         bS: String;
     };
 }
+
+export interface Album {
+    userId: Number;
+    id: Number;
+    title: String;
+}
+
+export interface Photo {
+    albumId: Number;
+    id: Number;
+    title: String;
+    url: String;
+    thumbnailUrl: String;
+}
