@@ -42,3 +42,28 @@ export const USER_QUERY = gql`
         }
     }
 `;
+
+export const QUERY_ALBUMS = gql`
+    query Albums {
+        albums {
+            id
+            title
+        }
+    }
+`;
+
+//this will query an album with tha photos within it.
+export const QUERY_PHOTOS_IN_ALBUM = gql`
+    query Album($albumId: ID!) {
+        album(id: $albumId) {
+            id
+            title
+            photos {
+                id
+                title
+                url
+                thumbnailUrl
+            }
+        }
+    }
+`;

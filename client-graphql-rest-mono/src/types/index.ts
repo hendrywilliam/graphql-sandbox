@@ -1,27 +1,36 @@
 export interface IUser {
-    id: Number;
-    name: String;
-    username: String;
-    email: String;
+    id: number;
+    name: string;
+    username: string;
+    email: string;
     address: {
-        street: String;
-        suite: String;
-        city: String;
-        zipcode: String;
+        street: string;
+        suite: string;
+        city: string;
+        zipcode: string;
         geo: {
-            lat: String;
-            lng: String;
+            lat: string;
+            lng: string;
         };
     };
-    phone: String;
-    website: String;
+    phone: string;
+    website: string;
     company: {
-        name: String;
-        catchPhrase: String;
-        bs: String;
+        name: string;
+        catchPhrase: string;
+        bs: string;
     };
 }
 
 export interface IVariables {
     userId: string | string[];
+}
+
+export interface IAlbumId {
+    albumId: string | string[];
+}
+
+export interface IAlbum {
+    id: number | string;
+    title: string;
 }
