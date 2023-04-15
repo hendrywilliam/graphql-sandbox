@@ -1,1 +1,1 @@
-newbie practicing graphql
+Self-taught newbie practicing GraphQL
