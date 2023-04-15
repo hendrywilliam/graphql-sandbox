@@ -9,6 +9,36 @@ export const ALL_USERS_QUERY = gql`
             id
             username
             website
+            phone
+            email
+        }
+    }
+`;
+
+export const USER_QUERY = gql`
+    query User($userId: ID!) {
+        user(id: $userId) {
+            id
+            name
+            username
+            email
+            address {
+                street
+                suite
+                city
+                zipcode
+                geo {
+                    lat
+                    lng
+                }
+            }
+            phone
+            website
+            company {
+                name
+                catchPhrase
+                bs
+            }
         }
     }
 `;
