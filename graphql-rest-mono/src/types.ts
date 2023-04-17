@@ -2,10 +2,10 @@ import NganuPostApi from "./ds/post";
 import NganuUserAPI from "./ds/user";
 
 export interface Post {
-    userId: Number;
-    id: Number;
-    title: String;
-    body: String;
+    userId: number;
+    id: number;
+    title: string;
+    body: string;
 }
 
 export interface ContextValue {
@@ -16,47 +16,57 @@ export interface ContextValue {
 }
 
 export interface Comment {
-    postId: Number;
-    id: Number;
-    name: String;
-    email: String;
-    body: String;
+    postId: number;
+    id: number;
+    name: string;
+    email: string;
+    body: string;
 }
 
 export interface User {
-    id: Number;
-    name: String;
-    username: String;
-    email: String;
+    id: number;
+    name: string;
+    username: string;
+    email: string;
     address: {
-        street: String;
-        suite: String;
-        city: String;
-        zipcode: String;
+        street: string;
+        suite: string;
+        city: string;
+        zipcode: string;
         geo: {
-            lat: String;
-            lng: String;
+            lat: string;
+            lng: string;
         };
     };
-    phone: String;
-    website: String;
+    phone: string;
+    website: string;
     company: {
-        name: String;
-        catchPhrase: String;
-        bS: String;
+        name: string;
+        catchPhrase: string;
+        bS: string;
     };
 }
 
 export interface Album {
-    userId: Number;
-    id: Number;
-    title: String;
+    userId: number;
+    id: number;
+    title: string;
 }
 
 export interface Photo {
-    albumId: Number;
-    id: Number;
-    title: String;
-    url: String;
-    thumbnailUrl: String;
+    albumId: number;
+    id: number;
+    title: string;
+    url: string;
+    thumbnailUrl: string;
+}
+
+interface MutationResponse {
+    code: string;
+    success: boolean;
+    message: string;
+}
+
+export interface CreatePostWithResponse extends MutationResponse {
+    post: Post;
 }

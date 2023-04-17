@@ -10,6 +10,10 @@ const typeDefs = gql`
         album(id: ID!): Album
     }
 
+    type Mutation {
+        createPost(post: NewPostInput!): CreateNewPostResponse!
+    }
+
     type Post {
         "User's id for this post"
         userId: Int!
@@ -74,6 +78,19 @@ const typeDefs = gql`
         title: String!
         url: String!
         thumbnailUrl: String!
+    }
+
+    input NewPostInput {
+        userId: Int!
+        title: String!
+        body: String!
+    }
+
+    type CreateNewPostResponse {
+        code: Int!
+        success: String!
+        message: String!
+        post: Post
     }
 `;
 
